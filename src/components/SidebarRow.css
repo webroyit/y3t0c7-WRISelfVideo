@@ -28,3 +28,15 @@
     font-weight: 500;
     margin-left: 8px;
 }
+
+.sidebarRow.selected {
+    background-color: #e6ecec;
+}
+
+.sidebarRow.selected > .sidebarRow__icon {
+    color: #0a6d4f;
+}
+
+.sidebarRow.selected > .sidebarRow__title {
+    font-weight: bold;
+}
