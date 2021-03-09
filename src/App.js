@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/Header';
@@ -8,13 +9,21 @@ import Sidebar from './components/Sidebar';
 function App() {
   return (
     <div className="app">
-      <Header />
-
-      <div className="app__page">
-        <Sidebar />
-        <RecommendedVideos />
-      </div>
-    
+      <Router>
+        <Header />
+        <Switch>
+          {/* ':' is a wild card which means any value */}
+          <Route path="/search/:searchTerm">
+            <h1>Search Page</h1>
+          </Route>
+          <Route path="/">
+            <div className="app__page">
+              <Sidebar />
+              <RecommendedVideos />
+            </div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
