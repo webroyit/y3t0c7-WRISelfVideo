@@ -14,7 +14,10 @@ function App() {
         <Switch>
           {/* ':' is a wild card which means any value */}
           <Route path="/search/:searchTerm">
-            <h1>Search Page</h1>
+            <div className="app__page">
+              <Sidebar />
+              <h1>Search Page</h1>
+            </div>
           </Route>
           <Route path="/">
             <div className="app__page">

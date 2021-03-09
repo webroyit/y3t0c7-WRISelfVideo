@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
@@ -9,20 +10,31 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import './Header.css';
 
 function Header() {
+    const [inputSearch, setInputSearch] = useState('');
+
     return (
         <div className="header">
             <div className="header__left">
                 <MenuIcon />
-                <img
-                    className="header__logo"
-                    src="logo.png"
-                    alt="Logo"
-                />
+                <Link to="/">
+                    <img
+                        className="header__logo"
+                        src="logo.png"
+                        alt="Logo"
+                    />
+                </Link>
+                
             </div>
 
             <div className="header__input">
-                <input placeholder="Search" type="text" />
-                <SearchIcon className="header__inputButton" />
+                <input 
+                    value={inputSearch}
+                    placeholder="Search" type="text"
+                    onChange={e => setInputSearch(e.target.value)}
+                />
+                <Link to={`/search/${inputSearch}`}>
+                    <SearchIcon className="header__inputButton" />
+                </Link>
             </div>
 
             <div className="header__icons">

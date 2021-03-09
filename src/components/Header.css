@@ -34,6 +34,7 @@
 
 .header__inputButton {
     width: 50px !important;
+    margin-top: 4px;
     background-color: #e7f1ee;
     border-left: 1px solid #5d6462;
     color: #1a936f;
